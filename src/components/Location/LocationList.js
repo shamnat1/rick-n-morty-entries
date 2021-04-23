@@ -44,8 +44,9 @@ const LocationList = () => {
             setLoading(false)
             setCount(data.locations.info.count)
             if(data.locations.info.next)
-                setPage(page => page++)
+                setPage(page+1)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data])
 
 

@@ -54,8 +54,9 @@ const CharacterList = () => {
             setLoading(false)
             setCount(data.characters.info.count)
             if(data.characters.info.next)
-                setPage(page => page++)
+                setPage(page+1)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data])
 
 

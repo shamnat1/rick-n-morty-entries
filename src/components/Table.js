@@ -1,6 +1,6 @@
 import React,{Fragment} from "react";
 import { useTable,usePagination } from "react-table";
-import { Table as B_Table } from 'react-bootstrap';
+import { Table as NTable } from 'react-bootstrap';
 import { Row,Col,Button,FormControl } from 'react-bootstrap';
 
 export default function Table({ columns, data,count }) {
@@ -42,7 +42,7 @@ export default function Table({ columns, data,count }) {
     return (
         <Fragment>
 
-        <B_Table {...getTableProps()} responsive="sm"  striped >
+        <NTable {...getTableProps()} responsive="sm"  striped >
             <thead>
             {headerGroups.map(headerGroup => (
                 <tr {...headerGroup.getHeaderGroupProps()}>
@@ -64,7 +64,7 @@ export default function Table({ columns, data,count }) {
                 )
             })}
             </tbody>
-        </B_Table>
+        </NTable>
         <Row style={{ maxWidth: 1000, textAlign: "center" }}>
             <Col md={3}>
                 <Button variant="secondary" size="sm"
