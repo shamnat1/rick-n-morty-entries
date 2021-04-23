@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import { useQuery, gql } from '@apollo/client';
 import Table from "../Table";
-import { Button,Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Loader from'../Loader'
 import Error from'../Error'
 import {ListColumns} from'./Columns'
@@ -37,8 +37,8 @@ export const CHARACTER_LIST_QUERY = gql`
 
 const CharacterList = () => {
     const [page,setPage] = useState(1)
-    const [results, setResults] = React.useState([])
-    const [count, setCount] = React.useState(0)
+    const [results, setResults] = useState([])
+    const [count, setCount] = useState(0)
     const [loading,setLoading] = useState(true);
     const { data, error } = useQuery(CHARACTER_LIST_QUERY,{
         variables: {
@@ -46,7 +46,6 @@ const CharacterList = () => {
         },
         fetchPolicy: "cache-and-network"
     });
-    // console.log(data, error,page)
 
     useEffect(() => {
         if(data && data.characters) {
@@ -55,7 +54,7 @@ const CharacterList = () => {
             setLoading(false)
             setCount(data.characters.info.count)
             if(data.characters.info.next)
-                setPage(page+1)
+                setPage(page => page++)
         }
     }, [data])
 

@@ -1,7 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import { useQuery, gql } from '@apollo/client';
 import Table from "../Table";
-import { Button,Container } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Loader from'../Loader'
 import Error from'../Error'
 import {ListColumns} from './Columns';
@@ -57,7 +57,7 @@ const EpisodeList = () => {
             setLoading(false)
             setCount(data.episodes.info.count)
             if(data.episodes.info.next)
-                setPage(page+1)
+                setPage(page => page++)
         }
     }, [data])
 

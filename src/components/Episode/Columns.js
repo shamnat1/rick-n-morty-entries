@@ -1,4 +1,4 @@
-import { Button,Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Moment from 'moment';
 export const ListColumns = [
     {
@@ -63,7 +63,7 @@ export const DetailColumns = [{
     {
         Header: 'Image',
         accessor: 'image',
-        Cell: props => <img src={props.row.original.image} width={60} ></img>
+        Cell: props => <img src={props.row.original.image} alt={props.row.original.name}  width={60} ></img>
 
     },
     {

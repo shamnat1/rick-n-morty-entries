@@ -1,6 +1,5 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
-import { useParams } from "react-router-dom";
 import Loader from '../Loader';
 import Error from '../Error';
 import { Container } from 'react-bootstrap';
@@ -54,8 +53,6 @@ const EpisodeDetail = (props) => {
         fetchPolicy: "cache-and-network"
     });
 
-
-    console.log(data, loading, error);
     const formatDate = (d)=>{
         return Moment(d)
             .local()

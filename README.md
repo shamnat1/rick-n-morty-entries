@@ -1,7 +1,4 @@
-:wq# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+Application to List Characters, Episodes, Locatioms and their details from https://rickandmortyapi.com/graphql using Graphql.
 ## Available Scripts
 
 In the project directory, you can run:

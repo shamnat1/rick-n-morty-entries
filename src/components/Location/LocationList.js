@@ -36,7 +36,6 @@ const LocationList = () => {
         },
         fetchPolicy: "cache-and-network"
     });
-    // console.log(JSON.stringify(data?data.locations.results:''),loading)
 
     useEffect(() => {
         if(data && data.locations) {
@@ -45,7 +44,7 @@ const LocationList = () => {
             setLoading(false)
             setCount(data.locations.info.count)
             if(data.locations.info.next)
-                setPage(page+1)
+                setPage(page => page++)
         }
     }, [data])
 

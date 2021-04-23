@@ -1,6 +1,5 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
-import { useParams } from "react-router-dom";
 import Loader from '../Loader';
 import Error from '../Error';
 import { Container } from 'react-bootstrap';
@@ -44,15 +43,12 @@ export const LOCATION_QUERY = gql`
 
 const LocationDetail = (props) => {
     const { id } = props.match.params;
-    console.log("id",id)
     const { data, loading, error } = useQuery(LOCATION_QUERY,{
         variables: {
             id:id
         },
         fetchPolicy: "cache-and-network"
     });
-
-    console.log(data,loading, error)
     if(loading)
         return <Loader/>
     if(error)

@@ -1,5 +1,4 @@
 import { Button } from 'react-bootstrap';
-import Moment from 'moment';
 export const ListColumns = [
     {
         Header: 'ID',
@@ -28,12 +27,6 @@ export const ListColumns = [
 
     }
 ]
-const formatDate = (d)=>{
-    return Moment(d)
-        .local()
-        .format("MM/DD/YYYY hh:mm")
-}
-
 
 export const DetailColumns = [
     {
@@ -58,7 +51,7 @@ export const DetailColumns = [
     {
         Header: 'Image',
         accessor: 'image',
-        Cell: props => <img src={props.row.original.image} width={60} ></img>
+        Cell: props => <img src={props.row.original.image} alt={props.row.original.name} width={60} ></img>
 
     },
     {

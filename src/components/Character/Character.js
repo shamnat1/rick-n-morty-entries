@@ -1,13 +1,11 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client';
-import { useParams } from "react-router-dom";
 import Loader from '../Loader';
 import Error from '../Error';
 import { Media } from 'react-bootstrap';
-import Moment from 'moment';
 import Table from '../Table'
 import {DetailColumns} from './Columns'
-
+ 
 export const CHARACTER_QUERY = gql`
   query character($id: ID!) {
     character(id:$id) {

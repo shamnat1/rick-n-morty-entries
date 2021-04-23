@@ -1,4 +1,4 @@
-import { Button,Container } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import Moment from 'moment';
 export const ListColumns =  [
     {
@@ -61,7 +61,6 @@ export const DetailColumns = [
         Cell: props => <div>{formatDate(props.value)} </div>
 
     },
-    ,
     {
         Header: 'Action',
         accessor: 'action',

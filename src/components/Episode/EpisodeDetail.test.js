@@ -502,7 +502,6 @@ describe("Episode Details Component ", () => {
             );
             await new Promise(resolve => setTimeout(resolve, 0));
             const tree = component.toJSON();
-            console.log("tree 123",tree)
             expect(tree.children[0].children).toContain('Loading...');
         })
     });
@@ -1032,7 +1031,6 @@ describe("Episode Details Component ", () => {
                 );
             await new Promise(resolve => setTimeout(resolve, 4000));
             const tree = component.toJSON();
-            console.log("tree",tree)
             expect(component.toJSON().children[0].type).toContain('div');
             expect(component.toJSON().children[0].children[0].type).toContain('h3');
         });
